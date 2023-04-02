@@ -1,0 +1,48 @@
+========================================
+How to Use  4-print_square.py
+========================================
+
+The function ``print_square(size)`` takes an integer argument and print square
+of char # with length equal to size
+
+Usage
+=====
+
+>>> print_square = __import__('4-print_square').print_square
+
+Test case 1: Normal execution
+>>> print_square(3)
+###
+###
+###
+
+Test case 2: Normal execution
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+Test case 3: Size = 0
+>>> print_square(0)
+
+Test case 4: Size is a float
+>>> print_square(3.4)
+Traceback (most recent call last):
+  File "4-print_square.py", line X, in <module>
+    print_square(3.4)
+  File "4-print_square.py", line Y, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+Test case 5: Size is a string
+>>> print_square("alx")
+Traceback (most recent call last):
+  File "4-print_square.py", line X, in <module>
+    print_square("alx")
+  File "4-print_square.py", line Y, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+

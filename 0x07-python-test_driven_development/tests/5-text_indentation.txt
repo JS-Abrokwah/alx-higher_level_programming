@@ -1,0 +1,85 @@
+=====================================================
+This is the doctest for the text_indentation function
+=====================================================
+
+Usage
+=====
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test 1: Normal input with period, question mark, and colon
+>>> text = "This is a sentence. This is another sentence? This is a third sentence:"
+>>> text_indentation(text)
+This is a sentence.
+This is another sentence?
+This is a third sentence:
+
+Test 2: Input with only periods
+>>> text = "This is a sentence. This is another sentence. This is a third sentence."
+>>> text_indentation(text)
+This is a sentence.
+This is another sentence.
+This is a third sentence.
+
+Test 3: Input with only question marks
+>>> text = "This is a sentence? This is another sentence? This is a third sentence?"
+>>> text_indentation(text)
+This is a sentence?
+This is another sentence?
+This is a third sentence?
+
+Test 4: Input with only colons
+>>> text = "This is a sentence: This is another sentence: This is a third sentence:"
+>>> text_indentation(text)
+This is a sentence:
+This is another sentence:
+This is a third sentence:
+
+Test 5: Input with no special characters
+>>> text = "This is a sentence without any special characters"
+>>> text_indentation(text)
+This is a sentence without any special characters
+
+Test 6: Empty input string
+>>> text = ""
+>>> text_indentation(text)
+
+
+Test 7: Input with leading and trailing spaces
+>>> text = "   This is a sentence. This is another sentence? This is a third sentence:   "
+>>> text_indentation(text)
+This is a sentence.
+This is another sentence?
+This is a third sentence:
+
+Test 8: Input is not a string
+>>> text = 123
+>>> text_indentation(text)
+Traceback (most recent call last):
+  File "<doctest test.text_indentation[8]>", line 1, in <module>
+    text_indentation(text)
+  File "test.txt", line 8, in text_indentation
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+
+Test 9: Input with multiple special characters in a row
+>>> text = "This is a sentence...with ellipsis. This is another sentence??with a double question mark. This is a third sentence::with a double colon."
+>>> text_indentation(text)
+This is a sentence.
+.
+.
+with ellipsis.
+This is another sentence?
+?
+with a double question mark.
+This is a third sentence:
+:
+with a double colon.
+
+Test 10: Input with special characters at the beginning
+>>> text = ".This is a sentence with a period at the beginning? This is another sentence with a question mark at the beginning: This is a third sentence with a colon at the beginning."
+>>> text_indentation(text)
+.
+This is a sentence with a period at the beginning?
+This is another sentence with a question mark at the beginning:
+This is a third sentence with a colon at the beginning.

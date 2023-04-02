@@ -1,0 +1,53 @@
+================================================
+This is the doctest for the say_my_name function
+================================================
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test case 1: First and last name are provided
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+Test case 2: First and last name are provided
+>>> say_my_name("Gustavo", "Fring")
+My name is Gustavo Fring
+
+Test case 3: Only the first name is provided
+>>> say_my_name("Mike")
+My name is Mike
+
+Test case 4: First name is not a string
+>>> say_my_name(123)
+Traceback (most recent call last):
+  File "<doctest test.say_my_name[3]>", line 1, in <module>
+    say_my_name(123)
+  File "test.txt", line 9, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+Test case 5: Last name is not a string
+>>> say_my_name("Saul", 42)
+Traceback (most recent call last):
+  File "<doctest test.say_my_name[4]>", line 1, in <module>
+    say_my_name("Saul", 42)
+  File "test.txt", line 11, in say_my_name
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
+
+Test case 6: First name is provided as None
+>>> say_my_name(None)
+Traceback (most recent call last):
+  File "<doctest test.say_my_name[7]>", line 1, in <module>
+    say_my_name(None)
+  File "test.txt", line 9, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+Test case 7: Last name is provided as None
+>>> say_my_name("Jessie", None)
+Traceback (most recent call last):
+  File "<doctest test.say_my_name[8]>", line 1, in <module>
+    say_my_name("Jessie", None)
+  File "test.txt", line 11, in say_my_name
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
