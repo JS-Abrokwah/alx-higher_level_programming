@@ -8,7 +8,7 @@ with private variables and getters and setters
 
 class Rectangle:
     """ Represents a rectangle """
-    def __init__(self, width = 0, height = 0):
+    def __init__(self, width=0, height=0):
         self.width(width)
         self.height(height)
 
@@ -27,10 +27,10 @@ class Rectangle:
 
         elif value <= 0:
             raise ValueError("width must be >= 0")
-        
+
         else:
             self.__width = value
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -41,4 +41,3 @@ class Rectangle:
 
         else:
             self.__height = value
-
