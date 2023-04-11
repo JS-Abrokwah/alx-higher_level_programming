@@ -1,0 +1,79 @@
+# Test BaseGeometry Class
+
+# Creating an instance of BaseGeometry
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+# Calling the area() method on the BaseGeometry instance
+# The output should raise an Exception since the method is not implemented yet
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+# Calling the integer_validator() method with a valid parameter
+# The output should show no errors or exceptions raised
+>>> bg.integer_validator("age", 25)
+
+# Calling the integer_validator() method with a non-integer parameter
+# The output should raise a TypeError with the appropriate message
+>>> bg.integer_validator("height", "ten")
+Traceback (most recent call last):
+    ...
+TypeError: height must be an integer
+
+# Calling the integer_validator() method with a negative integer parameter
+# The output should raise a ValueError with the appropriate message
+>>> bg.integer_validator("width", -10)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+# Creating a new class Rectangle that inherits from BaseGeometry
+>>> class Rectangle(BaseGeometry):
+...     """Defines a rectangle with width and height"""
+...     def __init__(self, width, height):
+...         self.__width = width
+...         self.__height = height
+
+# Creating an instance of Rectangle with valid width and height parameters
+>>> r1 = Rectangle(5, 10)
+
+# Calling the integer_validator() method on the Rectangle instance with valid parameters
+# The output should show no errors or exceptions raised
+>>> r1.integer_validator("width", 5)
+>>> r1.integer_validator("height", 10)
+
+# Calling the integer_validator() method on the Rectangle instance with invalid parameters
+# The output should raise a TypeError with the appropriate message
+>>> r1.integer_validator("width", "ten")
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+# Calling the integer_validator() method on the Rectangle instance with invalid parameters
+# The output should raise a ValueError with the appropriate message
+>>> r1.integer_validator("height", -10)
+Traceback (most recent call last):
+    ...
+ValueError: height must be greater than 0
+
+# Creating a new class Square that inherits from BaseGeometry
+>>> class Square(BaseGeometry):
+...     """Defines a square with a side length"""
+...     def __init__(self, size):
+...         self.__size = size
+
+# Creating an instance of Square with a valid size parameter
+>>> s1 = Square(5)
+
+# Calling the integer_validator() method on the Square instance with a valid parameter
+# The output should show no errors or exceptions raised
+>>> s1.integer_validator("size", 5)
+
+# Calling the integer_validator() method on the Square instance with an invalid parameter
+# The output should raise a TypeError with the appropriate message
+>>> s1.integer_validator("size", "ten")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
