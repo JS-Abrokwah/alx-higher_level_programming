@@ -138,6 +138,7 @@ class Rectangle(Base):
                 - 3rd argument represent height attribute
                 - 4th argument represents x attribute
                 - 5th argument represents y attribute
+            **kwargs: keyword arguments
         """
         if args and len(args) != 0:
             i = 0
@@ -156,6 +157,21 @@ class Rectangle(Base):
                 elif i == 4:
                     self.__y = arg
                 i += 1
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        pass
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.__width = value
+                elif key == "height":
+                    self.__height = value
+                elif key == "x":
+                    self.__x = value
+                elif key == "y":
+                    self.__y = value
 
     def __str__(self):
         """Returns the string representation of rectangle
