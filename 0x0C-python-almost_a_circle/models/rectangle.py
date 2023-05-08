@@ -128,6 +128,35 @@ class Rectangle(Base):
             [print("#", end="") for w in range(self.__width)]
             print("")
 
+    def update(self, *args):
+        """Update a Rectangle instance
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+        """
+        if args and len(args) != 0:
+            i = 0
+            for arg in args:
+                if i == 0:
+                    if arg is None:
+                        pass
+                    else:
+                        self.id = arg
+                elif i == 1:
+                    self.__width = arg
+                elif i == 2:
+                    self.__height = arg
+                elif i == 3:
+                    self.__x = arg
+                elif i == 4:
+                    self.__y = arg
+                i += 1
+
     def __str__(self):
         """Returns the string representation of rectangle
         """
