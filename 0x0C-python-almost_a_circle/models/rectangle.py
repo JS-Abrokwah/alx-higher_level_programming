@@ -109,7 +109,6 @@ class Rectangle(Base):
         else:
             self.__y = value
 
-
     def area(self):
         """
             Calculates and return the area of a rectangle instance
