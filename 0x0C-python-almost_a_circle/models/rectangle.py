@@ -1,0 +1,83 @@
+#!/usr/bin/python3
+
+""" This file creates a Rectangle class that inherits from Base
+The rectangle class defines a rectangle
+"""
+from models.base import Base
+
+
+class Rectangle(Base):
+    """ Defines Rectangle class"""
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """ intitalize a new Rectangle instance
+        Args:
+            width(int): The width of the new Rectangle instance
+            height(int): The height of the new Rectangle instance
+            x(int): The x coordinate of the hew Rectangle instance
+            y(int): The y coordinate of the new Rectangle instance
+            id(int): The new Rectangle instance's id
+        """
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
+        super().__init__(id)
+
+    """Getters"""
+    @property
+    def width(self):
+        """ A width getter """
+        return self.__width
+
+    @property
+    def height(self):
+        """ A height getter """
+        return self.__height
+
+    @property
+    def x(self):
+        """ A x coordinate getter """
+        return self.__x
+
+    @property
+    def y(self):
+        """ A y coordinate getter """
+        return self.__y
+
+    """ Setters """
+    @width.setter
+    def width(self, value):
+        """A setter for width"""
+        if not isinstance(value, int):
+            raise TypeError("Width must be integer")
+        elif value <= 0:
+            raise ValueError("Width must be greater than 0")
+        else:
+            self.__width = value
+
+    @height.setter
+    def height(self, value):
+        """A setter for height"""
+        if not isinstance(value, int):
+            raise TypeError("Height must be integer")
+        elif value <= 0:
+            raise ValueError("Height must be greater than 0")
+        else:
+            self.__height = value
+
+    @x.setter
+    def x(self, value):
+        """A setter for x coordinate"""
+        if not isinstance(value, int):
+            raise TypeError("The x coordinate must be integer")
+        else:
+            self.__x = value
+
+    @y.setter
+    def y(self, value):
+        """A setter for y coordinate"""
+        if not isinstance(value, int):
+            raise TypeError("The y coordinate must be integer")
+        else:
+            self.__y = value
