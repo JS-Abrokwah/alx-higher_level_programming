@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+"""Definition for Square class"""
+
 
 class Square:
+    """The Square class"""
 
     def __init__(self, size=0):
+        """Initializes new Square instance"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
